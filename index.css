@@ -72,6 +72,7 @@
 }
 
 .data {
+    overflow-wrap: normal;
     width: 25vw;
     height: 6vw;
     border: 1px solid black;
