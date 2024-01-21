@@ -10,12 +10,15 @@ document.addEventListener("DOMContentLoaded", function () {
   let multiply = document.getElementById("multiply");
   let divide = document.getElementById("divide");
   let sqrt = document.getElementById("sqrt");
+  let clr = document.getElementById("clr");
+
   ac.addEventListener("click", clearDisplay);
   plus.addEventListener("click", sum);
   minus.addEventListener("click", subtract);
   multiply.addEventListener("click", multiple);
   divide.addEventListener("click", division);
-
+  clr.addEventListener("click", backspace);
+  
   function sum() {
     if (result.length != 0) {
       if (result[result.length - 1] != "+") {
@@ -79,6 +82,12 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     return;
   }
+
+function backspace(){
+    result = result.slice(0,-1);
+    display.value = result
+}
+
 
   function calculateResult() {}
 
