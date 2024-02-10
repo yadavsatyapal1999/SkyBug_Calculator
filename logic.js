@@ -67,7 +67,7 @@ document.addEventListener("DOMContentLoaded", function () {
   function multiple() {
     if (result.length != 0) {
       if (result[result.length - 1] != "*") {
-        if (["-", "/", "+"].includes(result.slice(-1))) {
+        if (["-", "/", "+"].includes(result.slice(-1))) {  // includes find if it exist or not
           result = result.slice(0, -1) + "*";
         } else {
           result = result + "*";
@@ -126,8 +126,8 @@ document.addEventListener("DOMContentLoaded", function () {
   // It trigger after clicking on equal to button
 
   function calculateResult(str) {
-    console.log(str);
-    let arr = [];
+   // console.log(str);
+    let arr = []; 
     str = str.toString();
     let flag = true;
     let num = 0;
@@ -195,6 +195,7 @@ document.addEventListener("DOMContentLoaded", function () {
               num = 0;
               arr.push(str[i]);
             } else if (i == str.length - 2) {
+
               arr.push(Number(num + str[i]));
               num = 0;
             } else {
@@ -239,6 +240,16 @@ document.addEventListener("DOMContentLoaded", function () {
             arr.splice(index - 1, 3, final);
           }
         }
+
+        if(arr.includes(0)){
+          
+          while(arr.includes(0)){
+            let indexofzero = arr.indexOf(0)
+            {indexofzero !=0 ? arr.splice(indexofzero-1 ,indexofzero) : arr.splice(indexofzero,1)}
+          }
+        }
+        
+
         if (arr.indexOf("+") != -1) {
           while (arr.indexOf("+") != -1) {
             // [1,2,5,7,8]
